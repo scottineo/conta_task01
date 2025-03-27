@@ -1,5 +1,7 @@
 package conta.conta_model;
 
+import conta.conta_util.Cores;
+
 public class Conta {
     private int numero;
     private int agencia;
@@ -69,24 +71,24 @@ public class Conta {
     }
 
     public void visualizar() {
-        String tipo = "";
+        String tipoDescricao = "";
 
         switch (this.tipo) {
             case 1 -> {
-                tipo = "Conta Corrente";
+                tipoDescricao = "Conta Corrente";
                 break;
             }
             case 2 -> {
-                tipo = "Conta Poupança";
+                tipoDescricao = "Conta Poupança";
                 break;
             }
         }
-        System.out.println("\n\n***********************************************************");
-        System.out.println("Dados da Conta:");
-        System.out.println("***********************************************************");
-        System.out.println("Numero da Conta: " + this.numero);
+        System.out.println(Cores.TEXT_RED + "\n\n************************************************");
+        System.out.println(Cores.TEXT_RESET + "Dados da Conta:");
+        System.out.println(Cores.TEXT_RED + "************************************************");
+        System.out.println(Cores.TEXT_RESET + "Numero da Conta: " + this.numero);
         System.out.println("Agência: " + this.agencia);
-        System.out.println("Tipo da Conta: " + tipo);
+        System.out.println("Tipo da Conta: " + tipoDescricao);
         System.out.println("Titular: " + this.titular);
         System.out.println("Saldo: " + this.saldo);
     }
